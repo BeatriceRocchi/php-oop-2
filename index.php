@@ -29,7 +29,8 @@ require_once __DIR__ . '/data/db.php';
 
 <body>
   <header>
-    <div class="container text-center">
+    <div class="container d-flex justify-content-center align-items-center">
+      <i class="fa-solid fa-paw"></i>
       <h1>Pet lovers</h1>
     </div>
   </header>
@@ -38,13 +39,17 @@ require_once __DIR__ . '/data/db.php';
     <div class="container">
       <div class="row row-cols-4">
         <?php foreach ($productsCatalog as $product) : ?>
-          <div class="col">
+          <div class="col my-3">
             <div class="card h-100">
               <img src="<?php echo $product->img ?>" class="card-img-top" alt="<?php echo $product->name ?>">
               <div class="card-body">
                 <div class="category-icons-box text-end">
                   <?php if ($product->category === 'cane') : ?>
                     <i class="fa-solid fa-dog"></i>
+                  <?php elseif ($product->category === 'gatto') : ?>
+                    <i class="fa-solid fa-cat"></i>
+                  <?php elseif ($product->category === 'roditore') : ?>
+                    <i class="fa-solid fa-otter"></i>
                   <?php endif; ?>
                 </div>
                 <h5 class="card-title text-capitalize"><?php echo $product->name ?></h5>
