@@ -16,4 +16,9 @@ class Product
     $this->fullprice = $_fullprice;
     $this->img = $_img;
   }
+
+  public function getFullInfo()
+  {
+    return "$this->type per $this->category";
+  }
 }
