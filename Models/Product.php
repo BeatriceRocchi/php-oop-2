@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/Review.php";
+require_once __DIR__ . "/Category.php";
 
 class Product
 {
@@ -12,7 +13,7 @@ class Product
 
   use Review;
 
-  public function __construct(string $_name, string $_type, string $_category, float $_fullprice, string $_img)
+  public function __construct(string $_name, string $_type, Category $_category, float $_fullprice, string $_img)
   {
     $this->name = $_name;
     $this->type = $_type;
@@ -38,6 +39,6 @@ class Product
 
   public function getFullInfo()
   {
-    return "$this->type per $this->category";
+    return "$this->type";
   }
 }

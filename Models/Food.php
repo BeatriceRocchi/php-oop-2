@@ -8,7 +8,7 @@ class Food extends Product
   public $nutritionalIndication;
   public $size;
 
-  public function __construct(string $_name, string $_type, string $_category, float $_fullprice, string $_img, string $_foodType, array $_ingredients, string $_ageRange, string $_nutritionalIndication, array $_size)
+  public function __construct(string $_name, string $_type, Category $_category, float $_fullprice, string $_img, string $_foodType, array $_ingredients, string $_ageRange, string $_nutritionalIndication, array $_size)
   {
     parent::__construct($_name, $_type, $_category, $_fullprice, $_img);
 

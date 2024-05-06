@@ -4,7 +4,19 @@ require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/Toy.php';
 require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Kennel.php';
+require_once __DIR__ . '/Models/Category.php';
 require_once __DIR__ . '/data/db.php';
+
+try {
+  $productsCatalog[] = new Toy('Gioco Peluche con Squittio', 'Giocattolo', new Category('cane', '<i class="fa-solid fa-dog"></i>'), 7.80, 'https://arcaplanet.vtexassets.com/arquivos/ids/218063/https---www.arcaplanet.it-media-catalog-product--t-r-trixie-cane-in-tessuto-peluche-tric78.jpg?v=637454594866330000', 'stoffa', ['bianco', 'beige', 'marrone']);
+} catch (Exception $e) {
+  var_dump($e->getMessage());
+}
+
+foreach ($productsCatalog as $product) {
+  $product->tot = rand(10, 100);
+  $product->stars = rand(1, 5);
+}
 
 ?>
 
@@ -44,13 +56,7 @@ require_once __DIR__ . '/data/db.php';
               <img src="<?php echo $product->img ?>" class="card-img-top" alt="<?php echo $product->name ?>">
               <div class="card-body">
                 <div class="category-icons-box text-end">
-                  <?php if ($product->category === 'cane') : ?>
-                    <i class="fa-solid fa-dog"></i>
-                  <?php elseif ($product->category === 'gatto') : ?>
-                    <i class="fa-solid fa-cat"></i>
-                  <?php elseif ($product->category === 'roditore') : ?>
-                    <i class="fa-solid fa-otter"></i>
-                  <?php endif; ?>
+                  <?php echo $product->category->icon ?>
                 </div>
                 <h5 class="card-title text-capitalize"><?php echo $product->name ?></h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary text-capitalize"><?php echo $product->type ?></h6>

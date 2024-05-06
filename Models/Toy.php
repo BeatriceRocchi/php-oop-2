@@ -6,7 +6,7 @@ class Toy extends Product
   public $colors;
   public $interactive;
 
-  public function __construct(string $_name, string $_type, string $_category, float $_fullprice, string $_img, string $_material, array $_colors, string $_interactive = null)
+  public function __construct(string $_name, string $_type, Category $_category, float $_fullprice, string $_img, string $_material, array $_colors, string $_interactive = null)
   {
     parent::__construct($_name, $_type, $_category, $_fullprice, $_img);
     $this->material = $_material;
