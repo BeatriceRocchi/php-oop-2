@@ -6,12 +6,6 @@ require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Kennel.php';
 require_once __DIR__ . '/data/db.php';
 
-
-try {
-  $productsCatalog[] = new Toy('Gioco Peluche con Squittio', 'Giocattolo', 'cane', 7.80, 'https://arcaplanet.vtexassets.com/arquivos/ids/218063/https---www.arcaplanet.it-media-catalog-product--t-r-trixie-cane-in-tessuto-peluche-tric78.jpg?v=637454594866330000', 'stoffa', ['bianco', 'beige', 'marrone']);
-} catch (Exception $e) {
-  var_dump($e->getMessage());
-}
 ?>
 
 <!DOCTYPE html>
