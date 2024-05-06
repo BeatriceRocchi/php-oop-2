@@ -6,8 +6,6 @@ require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Kennel.php';
 require_once __DIR__ . '/data/db.php';
 
-var_dump($productsCatalog[1]);
-
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +63,7 @@ var_dump($productsCatalog[1]);
                 </div>
 
                 <p class="card-text"><?php echo $product->getFullInfo() ?></p>
-                <div class="price-box">&euro; <?php echo number_format($product->fullprice, 2) ?></div>
+                <div class="price-box">&euro; <?php echo number_format($product->getPrice(), 2) ?></div>
               </div>
             </div>
           </div>

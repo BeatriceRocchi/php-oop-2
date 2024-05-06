@@ -7,7 +7,7 @@ class Product
   public $name;
   public $type;
   public $category;
-  public $fullprice;
+  protected $fullprice;
   public $img;
 
   use Review;
@@ -17,8 +17,23 @@ class Product
     $this->name = $_name;
     $this->type = $_type;
     $this->category = $_category;
-    $this->fullprice = $_fullprice;
+    $this->setPrice($_fullprice);
     $this->img = $_img;
+  }
+
+  // Setter
+  public function setPrice($_fullprice)
+  {
+    if (empty($_fullprice) || $_fullprice <= 0) {
+      throw new Exception('Il prezzo non può essere vuoto e deve essere un numero maggiore di 0');
+    }
+    $this->fullprice = $_fullprice;
+  }
+
+  // Getter
+  public function getPrice()
+  {
+    return $this->fullprice;
   }
 
   public function getFullInfo()
