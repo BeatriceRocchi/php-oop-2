@@ -17,3 +17,8 @@ $productsCatalog = [
 
   new Toy('Gioco Bacchetta con Topini', 'Giocattolo', 'gatto', 3.49, 'https://arcaplanet.vtexassets.com/arquivos/ids/273144/croci-gioco-gatto-topini.jpg?v=637921882035730000', 'stoffa', ['arancione', 'viola', 'bianco', 'rosa'])
 ];
+
+foreach ($productsCatalog as $product) {
+  $product->tot = rand(10, 100);
+  $product->stars = rand(1, 5);
+}

@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/Review.php";
+
 class Product
 {
   public $name;
@@ -7,6 +9,8 @@ class Product
   public $category;
   public $fullprice;
   public $img;
+
+  use Review;
 
   public function __construct(string $_name, string $_type, string $_category, float $_fullprice, string $_img)
   {

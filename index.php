@@ -6,6 +6,8 @@ require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/Models/Kennel.php';
 require_once __DIR__ . '/data/db.php';
 
+var_dump($productsCatalog[1]);
+
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +56,14 @@ require_once __DIR__ . '/data/db.php';
                 </div>
                 <h5 class="card-title text-capitalize"><?php echo $product->name ?></h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary text-capitalize"><?php echo $product->type ?></h6>
+
+                <div class="d-flex align-items-baseline">
+                  <?php for ($i = 0; $i < $product->stars; $i++) : ?>
+                    <i class="fa-solid fa-paw pe-1"></i>
+                  <?php endfor; ?>
+                  <p class="mb-1 fst-italic"><?php echo $product->getReviewsInfo() ?></p>
+                </div>
+
                 <p class="card-text"><?php echo $product->getFullInfo() ?></p>
                 <div class="price-box">&euro; <?php echo number_format($product->fullprice, 2) ?></div>
               </div>
